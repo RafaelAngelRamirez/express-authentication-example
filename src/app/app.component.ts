@@ -17,7 +17,7 @@ export class AppComponent {
     this.corsService.conexion().subscribe(
       (r) => {
         this.cargando = false;
-        this.resultado.push(r);
+        this.resultado.unshift(new Date().toString().concat(' => ' + r));
       },
       () => (this.cargando = false)
     );

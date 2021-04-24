@@ -11,7 +11,9 @@ export class CorsService {
 
   conexion() {
     return this.http
-      .get('https://codice-express-authentication.herokuapp.com')
+      .get('https://codice-express-authentication.herokuapp.com', {
+        responseType: 'text',
+      })
       .pipe(
         catchError((error) => {
           console.log(error);
