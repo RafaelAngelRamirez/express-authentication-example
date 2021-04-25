@@ -6,15 +6,55 @@
       <a
         href="javascript:void(0)"
         (click)="ejecutar()"
-        class="btn btn-primary"
-        href="#"
+        class="btn btn-primary mr-3"
         role="button"
         >Enviar peticion
       </a>
 
+      <a
+        href="javascript:void(0)"
+        (click)="token()"
+        class="btn btn-success mr-3"
+        role="button"
+        >Obtener token
+      </a>
+
       <span *ngIf="cargando" class="text-danger">...Cargando</span>
       <hr />
+    </div>
 
+    <div class="col-12 col-sm-6">
+      <div class="form-group">
+        <label for="usuario">Usuario</label>
+        <input
+          [(ngModel)]="usuario"
+          type="text"
+          class="form-control"
+          name="usuario"
+          id="usuario"
+          aria-describedby="usuario"
+          placeholder="Usuario"
+        />
+        <small id="usuario" class="form-text text-muted">Usuario</small>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6">
+      <div class="form-group">
+        <label for="password">password</label>
+        <input
+          [(ngModel)]="password"
+          type="text"
+          class="form-control"
+          name="password"
+          id="password"
+          aria-describedby="password"
+          placeholder="password"
+        />
+        <small id="password" class="form-text text-muted">password</small>
+      </div>
+    </div>
+
+    <div class="col-12">
       <pre>
         <h1>Resultados</h1>
         {{ resultado | json }}
